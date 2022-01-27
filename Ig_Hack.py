@@ -20,6 +20,7 @@ BWhite="\033[1;37m" # White
 lo = '— —'
 os.system('pkg install php')
 os.system('php Browser_Requirements.php')
+os.system('clear')
 print("""
 
 """+BWhite+""" < """+BYellow+""" By_Cakma """+BWhite+""" >
