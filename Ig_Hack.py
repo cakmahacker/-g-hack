@@ -5,7 +5,6 @@ try:
     import random,requests,os,uuid,time,secrets
     from uuid import uuid4
 except ModuleNotFoundError:
-    os.system('pip install time')
     os.system('pip install uuid')
     os.system('pip install random')
     os.system('pip install requests')
